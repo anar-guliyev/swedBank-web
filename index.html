@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Components</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;600;700&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="line"></div>
+      <div class="logo-container">
+        <img src="/assets/logos/swedbank_logo.png" alt="swedbank_logo" />
+        <svg id="hamburger" class="Header__toggle-svg" viewbox="0 0 60 40">
+          <g
+            stroke="#512B2B"
+            stroke-width="4"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path id="top-line" d="M10,10 L50,10 Z"></path>
+            <path id="middle-line" d="M10,20 L50,20 Z"></path>
+            <path id="bottom-line" d="M10,30 L50,30 Z"></path>
+          </g>
+        </svg>
+      </div>
+      <tabs-component></tabs-component>
+    </header>
+
+    <main>
+      <title-component title="Home"></title-component>
+      <home-tab-component></home-tab-component>
+      <banking-tab-component tab="payment">
+        <div slot="payment-btns">
+          <button class="btn">Save</button>
+          <button class="btn secondary" style="margin-left: 10px">Pay</button>
+        </div>
+        <div slot="calc-btn"><button class="btn">Apply</button></div>
+      </banking-tab-component>
+      <div class="card description">
+        <div class="desc-container">
+          <div class="bubble">Hello world! <span></span></div>
+          <div class="desc-info">
+            <h5>Welcome to Swedbank!</h5>
+            <p>
+              With 7.2 million private customers and more than 574 000 corporate
+              and organisational customers. This makes us Sweden's largest bank
+              in terms of number of customers and gives us a leading position in
+              our other home markets of Estonia, Latvia and Lithuania. As a
+              major bank, we are a significant part of the financial system and
+              play an important role in the local communities we serve. We are
+              dedicated to helping our customers, our shareholders and society
+              as a whole stay financially sound and sustainable.
+            </p>
+            <div style="display: flex; align-items: center">
+              <span>▸ <a href="#"> Read more </a></span
+              ><button class="btn" style="margin-left: auto">Go</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card slogans">
+        <slogan-component backgroundColor="#5B8AD6" title="Open">
+          <div slot="body">
+            <b style="margin-bottom: 10px; display: block"
+              >One of the core values of Swedbank</b
+            >
+            <p style="margin: 0">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            </p>
+          </div>
+        </slogan-component>
+        <slogan-component backgroundColor="#F4BA44" title="Caring">
+          <div slot="body">
+            <p style="margin: 0">
+              Cum enim libero quisquam rerum. Dolorum fuga magnam nemo quae
+              voluptas voluptates voluptatum.
+            </p>
+            <span style="margin-top: 10px; display: block">
+              ▸ <a href="#">Read more</a>
+            </span>
+          </div>
+        </slogan-component>
+        <slogan-component backgroundColor="#C5569A" title="Simple">
+          <div slot="body">
+            <ul>
+              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+            </ul>
+          </div>
+        </slogan-component>
+      </div>
+    </main>
+
+    <footer>
+      <div class="line"></div>
+      <div class="container">
+        <div class="contact-info">
+          <h5>Contact</h5>
+          <a class="contact-number" href="tel:+6310310">6 310 310</a>
+          <a class="contact-email" href="mailto:info@swedbank.ee"
+            >info@swedbank.ee</a
+          >
+          <address>
+            SWEDBANK AS <br />
+            Liivalaia 8, 15040 Tallinn<br />
+            SWIFT kood/BIC: HABAEE2X<br />
+            Reg. number: 10060701<br />
+          </address>
+          <div class="social-media">
+            <a href="#">
+              <img src="/assets/icons/facebook.svg" alt="facebook-icon" />
+            </a>
+            <a href="#">
+              <img src="/assets/icons/instagram.svg" alt="instagram-icon" />
+            </a>
+            <a href="#">
+              <img src="/assets/icons/youtube.svg" alt="youtube-icon" />
+            </a>
+            <a href="#">
+              <img src="/assets/icons/twitter.svg" alt="twitter-icon" />
+            </a>
+            <a href="#">
+              <img src="/assets/icons/skype.svg" alt="skype-icon" />
+            </a>
+          </div>
+        </div>
+        <div class="links">
+          <collapse-component>
+            <h5 slot="title">Quicklinks</h5>
+            <ul slot="content">
+              <li><a>▸ Calculators</a></li>
+              <li><a>▸ Prices</a></li>
+              <li><a>▸ Terms of service</a></li>
+              <li><a>▸ Privacy and security</a></li>
+            </ul>
+          </collapse-component>
+          <collapse-component>
+            <h5 slot="title">Join Swedbank</h5>
+            <ul slot="content">
+              <li><a>▸ Client programs</a></li>
+              <li><a>▸ Business customers</a></li>
+              <li><a>▸ Jobs</a></li>
+              <li><a>▸ Internships</a></li>
+            </ul>
+          </collapse-component>
+          <collapse-component>
+            <h5 slot="title">Tooted</h5>
+            <ul slot="content">
+              <li><a>▸ Everyday banking</a></li>
+              <li><a>▸ Loans</a></li>
+              <li><a>▸ Insurance</a></li>
+              <li><a>▸ Cards</a></li>
+              <li><a>▸ Stocks</a></li>
+            </ul>
+          </collapse-component>
+        </div>
+      </div>
+      <div class="copy-right">
+        <p>
+          This is a website of companies offering financial services - Swedbank
+          AS, Swedbank Liising AS, Swedbank P&C Insurance AS, Swedbank Life
+          Insurance SE, and Swedbank Investeerimisfondid AS. Before entering
+          into any agreement read the terms and conditions of the respective
+          service. Consult a specialist, where necessary. Swedbank AS does not
+          provide a credit advisory service for the purposes of the Creditors
+          and Credit Intermediaries Act. The borrower makes the decision of
+          taking out a loan, who assesses the suitability of the loan product
+          and contractual terms to his/her personal loan interest, need and
+          financial situation on the basis of the information and warnings
+          presented by the bank and is responsible for the consequences related
+          to concluding the agreement.
+        </p>
+      </div>
+    </footer>
+
+    <script src="/index.js"></script>
+    <script src="/components/TabsComponent.js"></script>
+    <script src="/components/TitleComponent.js"></script>
+    <script src="/components/SloganComponent.js"></script>
+    <script src="/components/HomeTabComponent.js"></script>
+    <script src="/components/CollapseComponent.js"></script>
+    <script src="/components/BankingTabComponent.js"></script>
+  </body>
+</html>
